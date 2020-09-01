@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello world</title>
+
+  <!-- Latest Version -->
+  <script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js" type="text/javascript"></script>
+  <script>
+    var config = {
+      apiKey: '592b99ebdf88c091dad9b556b6d8de236ac97687',
+      product: 'PRO_MULTISITE',
+      text: {
+        thirdPartyTitle: 'Warning: Some cookies require your attention',
+        thirdPartyDescription: 'Consent for some third party cookies can not be automatically revoked. Please follow the link below if you want to opt out of them.'
+      },
+      optionalCookies: [
+        {
+          name: 'analytics',
+          label: 'Analytical Cookies',
+          description: 'Analytical cookies help us to improve our website by collecting and reporting information on its usage.',
+          cookies: ['_ga', '_gid', '_gat', '__utma', '__utmt', '__utmb', '__utmc', '__utmz', '__utmv'],
+          onAccept: function () {
+            console.log('accepted analytics!');
+          },
+          onRevoke: function () {
+            console.log('revoked analytics!');
+          }
+        }
+      ]
+    };
+
+    CookieControl.load(config);
+
+  </script>
+</head>
+
+<body>
+
+  <h1>Hello world!</h1>
+  <p>Hello there.</p>
+
+</body>
+
+</html>
